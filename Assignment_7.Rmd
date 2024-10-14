@@ -1,0 +1,49 @@
+---
+title: "Assignment_7"
+author: "Nwe Oo Mon (Nina)"
+date: "2024-10-13"
+output: html_document
+---
+
+```{r setup}
+# Load necessary libraries
+library(XML)        # For XML processing
+library(jsonlite)   # For JSON processing
+library(rvest)      # For HTML processing
+
+# Load the HTML file
+html_data <- read_html("C:/Users/ninan/iCloudDrive/Study/CUNY/607 Data Acquisition and Management/w7/books.html") %>%
+  html_table(fill = TRUE)
+books_html <- html_data[[1]]
+print(books_html)
+
+# Load the XML file
+xml_data <- xmlParse("C:/Users/ninan/iCloudDrive/Study/CUNY/607 Data Acquisition and Management/w7/books.xml")
+xml_root <- xmlRoot(xml_data)
+books_xml <- xmlToDataFrame(nodes = getNodeSet(xml_root, "//book"))
+print(books_xml)
+
+# Load the JSON file
+books_json <- fromJSON("C:/Users/ninan/iCloudDrive/Study/CUNY/607 Data Acquisition and Management/w7/books.json")
+print(books_json)
+
+# Check if they are identical
+identical(books_html, books_xml)
+identical(books_html, books_json)
+identical(books_xml, books_json)
+
+# Summary of each dataframe
+str(books_html)
+str(books_xml)
+str(books_json)
+```
+
+## Main differences among the dataframes are as follows:
+
+#### Data Types
+
+One data frame store numbers as characters (xml), while another stores them as integers (html and json).
+
+#### books_html is a tibblet
+
+books_html is a tibblet (from rvest)

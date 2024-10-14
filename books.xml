@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book>
+        <title>Sapiens: A Brief History of Humankind</title>
+        <authors>Yuval Noah Harari</authors>
+        <year>2011</year>
+        <genre>Non-fiction</genre>
+    </book>
+    <book>
+        <title>Homo Deus: A Brief History of Tomorrow</title>
+        <authors>Yuval Noah Harari</authors>
+        <year>2015</year>
+        <genre>Non-fiction</genre>
+    </book>
+    <book>
+        <title>Unstoppable Us, Volume 1: How Humans Took Over the World</title>
+        <authors>Yuval Noah Harari, Ricard Zaplana Ruiz</authors>
+        <year>2022</year>
+        <genre>Children's Non-fiction</genre>
+    </book>
+</books>
